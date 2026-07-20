@@ -1,0 +1,272 @@
+/* ===========================
+   Global Reset & Base
+   =========================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #1a1a1a;
+  --card-bg: #222222;
+  --card-border: #333333;
+  --divider: #2e2e2e;
+  --text-primary: #d4d4d4;
+  --text-muted: #888888;
+  --text-dim: #5a5a5a;
+  --accent: #a8a8a8;
+  --link: #c8c8c8;
+  --link-hover: #ffffff;
+  --font: 'Courier New', 'Courier', monospace;
+  --card-width: 860px;
+  --radius: 2px;
+}
+
+html, body {
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 50px 20px 70px;
+}
+
+/* ===========================
+   Card Container
+   =========================== */
+.card {
+  width: 100%;
+  max-width: var(--card-width);
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+/* ===========================
+   Dividers
+   =========================== */
+hr {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 0;
+}
+
+/* ===========================
+   Banner Section
+   =========================== */
+.banner {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.banner img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.85);
+}
+
+/* ===========================
+   Caption Block
+   =========================== */
+.caption-block {
+  padding: 16px 28px 18px;
+  text-align: center;
+  background-color: var(--card-bg);
+}
+
+.caption-block .caption-title {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-transform: lowercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 2px;
+}
+
+.caption-block .caption-sub {
+  font-size: 12px;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+}
+.caption-title a {
+    color: inherit;          /* Keeps it the same text color as before */
+    text-decoration: none;   /* Removes the default underline */
+}
+
+.caption-title a:hover {
+    color: var(--text-muted); /* Optional: dims the text slightly when hovered so users know it's a link */
+}
+.caption-sub a {
+    color: inherit;          /* Keeps it the same text color as before */
+    text-decoration: none;   /* Removes the default underline */
+}
+
+.caption-sub a:hover {
+    color: var(--text-muted); /* Optional: dims the text slightly when hovered so users know it's a link */
+}
+
+/* ===========================
+   Bio Section
+   =========================== */
+.bio-section {
+  padding: 28px 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 26px;
+  align-items: flex-start;
+}
+
+/* Left: Avatar */
+.bio-avatar {
+  flex-shrink: 0;
+}
+
+.bio-avatar img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--card-border);
+  display: block;
+  filter: brightness(0.9) contrast(1.05);
+}
+
+/* Right: Text */
+.bio-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.bio-name {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+  text-transform: lowercase;
+}
+
+.bio-handle {
+  font-size: 13px;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.bio-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+
+/* Links row */
+.bio-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 2px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.bio-links a {
+  color: var(--link);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.15s ease;
+}
+
+.bio-links a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+.bio-links .sep {
+  color: var(--text-dim);
+  margin: 0 1px;
+  user-select: none;
+}
+
+/* ===========================
+   Stats / Info Row
+   =========================== */
+.info-row {
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.info-item {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-muted);
+  align-items: baseline;
+}
+
+.info-item .info-key {
+  color: var(--text-dim);
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+}
+
+.info-item .info-val {
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+/* ===========================
+   Footer
+   =========================== */
+.card-footer {
+  padding: 18px 20px;
+  text-align: center;
+}
+
+.card-footer p {
+  font-size: 14px;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+}
+
+.card-footer .glyph {
+  color: var(--text-muted);
+  margin: 0 8px;
+  font-size: 12px;
+}
+
+/* ===========================
+   Page-level footer
+   =========================== */
+.page-footer {
+  margin-top: 24px;
+  font-size: 10px;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .bio-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .bio-links {
+    justify-content: center;
+  }
+  .info-row {
+    align-items: center;
+  }
+}
